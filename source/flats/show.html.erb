@@ -1,0 +1,76 @@
+<!-- source/flats/show.html.erb -->
+
+
+<!-- Access data.flats with owner's name as key -->
+<% flat = data.flats[owner] %>
+
+<div class="profile-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://kitt.lewagon.com/placeholder/cities/<%= flat.city_slug %>');">
+  <h1><%= flat.city_slug.capitalize %></h1>
+</div>
+
+<div class="container">
+  <div class="row">
+
+    <div class="flat-features">
+      <!-- Inject flat data in template -->
+      <%= image_tag "https://kitt.lewagon.com/placeholder/users/#{owner}", class: "img-circle avatar" %>
+      <p> <strong><%= flat.name %></strong></p>
+      <h3><%= flat.description %></h3>
+      <p><%= flat.city_name %></p>
+    </div>
+
+
+   <div class = "wrapper-form col-xs-12 col-sm-4">
+        <h3>Book it!</h3>
+    <form>
+        <div class="col-xs-12 col-sm-6 ">
+          <div class="form-group">
+            <label for="check-in">Check-in</label>
+            <input type="text" class="form-control" id="Check-in" placeholder="<%= Date.today %> ">
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-6">
+          <div class="form-group">
+            <label for="check-out">Check-out</label>
+            <input type="text" class="form-control" id="check-out" placeholder="<%= Date.today + 2 %>">
+          </div>
+        </div>
+       <div class="col-xs-12 ">
+        <div class = "form-group">
+          <label for="favorite">Guests</label>
+            <select name="source" class = "form-control">
+              <option value="one">One</option>
+              <option value="two">Two</option>
+              <option value="three">Three</option>
+            </select>
+        </div>
+     </div>
+
+    <div class="col-xs-12 " >
+      <div class = "form-group">
+        <div class = "btn btn-primary form-btn">Submit!</div>
+      </div>
+    </div>
+
+    </div>
+
+  </div>
+
+    <div class="wrapper-features">
+      <div class="col-xs-12 " >
+        <% flat.rating.times do  %>
+        <i class="fa fa-star" style="color: #ffb400"></i>
+        <% end %>
+        <% (5 - flat.rating).times do  %>
+        <i class="fa fa-star" style="color: #555555"></i>
+        <% end %>
+      </div>
+
+
+
+
+  </div>
+</div>
+
+

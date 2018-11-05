@@ -1,3 +1,6 @@
+require 'yaml'
+require 'pry-byebug'
+
 activate :autoprefixer do |prefix|
   prefix.browsers = "last 2 versions"
 end
@@ -19,4 +22,10 @@ end
 activate :deploy do |deploy|
   deploy.build_before = true
   deploy.deploy_method = :git
+end
+
+flatsss = YAML.load_file('data/flats.yml')
+
+data.flats.each do |username, _flat|
+  proxy "/flats/#{username}.html", "/flats/show.html", locals: { owner: username }, ignore: true
 end

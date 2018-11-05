@@ -1,0 +1,39 @@
+.row {
+  display: flex;
+  margin: 50px auto;
+  h1 {
+    margin: 20px 0px 0px 20px;
+  }
+}
+
+.profile-banner {
+  height: 50vh;
+  background-position: center;
+  color: white;
+  font-weight: bold;
+
+
+}
+
+.flat-features {
+  text-align: center;
+  margin-right: 20vw;
+}
+
+
+
+.wrapper-form {
+  background-color: gray;
+  border-radius: 5px;
+  justify-content: center;
+  padding: 10px;
+
+}
+
+.form-btn {
+  width: 100%;
+}
+
+.wrapper-features {
+
+}
